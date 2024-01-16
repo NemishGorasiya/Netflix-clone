@@ -8,19 +8,24 @@ body {
     background: #232323;
 }
 .hero {
+    /* height: max(75vh,fit-content); */
+    /* height: auto; */
     height: 75vh;
     background: linear-gradient(to bottom, rgba(0 , 0, 0, 1),rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)),
               url('./Assets/bg1.jpg');
 }
-.hero .navbar {
+.navbar {
+    width: 100%;
     display: flex;
     justify-content: space-around;
     padding: 20px 0;
     /* background: yellow; */
     align-items: center;
     height: 89px;
+    position: fixed;
+    top: 0;
 }
-.hero .navbar .nav-left svg{
+.navbar .nav-left svg{
     fill: #E50914;
     height: 45px;
 }
@@ -67,7 +72,8 @@ body {
       align-items: center;
       flex-direction: column;
       color: white;
-      height: calc(100% - 89px);
+      /* height: calc(100% - 89px); */
+      height: 100%;
       width: 100%;
 }
 .emailSection > * {

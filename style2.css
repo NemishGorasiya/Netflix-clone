@@ -1,5 +1,5 @@
 @media only screen and (max-width: 1280px) {
-    .hero .navbar {
+    .navbar {
         justify-content: space-between;
         padding:30px;
     }
@@ -14,7 +14,7 @@
     }
 }
 @media only screen and (max-width: 960px) {
-    .hero .navbar .nav-left svg{
+    .navbar .nav-left svg{
         height: 30px;
     }
     .nav-right ul select , .nav-right ul button {
@@ -62,7 +62,7 @@
     }
 }
 @media only screen and (max-width: 600px) {
-    .hero .navbar .nav-left svg{
+    .navbar .nav-left svg{
         height: 22px;
     }
     .email {
@@ -87,7 +87,7 @@
     }
 }
 @media only screen and (max-width: 400px){
-    .hero .navbar {
+    .navbar {
         padding: 10px;
     }
     .nav-right ul select , .nav-right ul button {
@@ -101,13 +101,20 @@
     }
     .email button {
         font-size: 17px;
-        /* font-weight: 400; */
-        /* padding: 10px 10px; */
         height: 40px;
     }
 }
-@media only screen and (max-height: 400px){
+@media only screen and (max-height: 645px){
     .hero {
-        100vh;
+        height: auto;
+    }
+    .emailSection {
+        height: auto;
+        padding: 100px 0;
+    }
+}
+@media only screen and (max-height: 450px){
+    .emailSection {
+        padding: 80px 0;
     }
 }
