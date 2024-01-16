@@ -1,0 +1,113 @@
+@media only screen and (max-width: 1280px) {
+    .hero .navbar {
+        justify-content: space-between;
+        padding:30px;
+    }
+    #tv > div , #mobile > div{
+        width: 45%;
+    }
+    #faq-section .faq {
+        width: 94%;
+    }
+    #footer-section .footer {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .hero .navbar .nav-left svg{
+        height: 30px;
+    }
+    .nav-right ul select , .nav-right ul button {
+        margin: 0 5px;
+    }
+    .emailSection h1 {
+        font-size: 34px;
+    }
+    
+    .emailSection h3 {
+        font-size: 22px;
+    }
+    .emailSection h4 , .faq-section div h4{
+        font-size: 20px;
+    }
+    .email input{
+        width: 50%;
+    }
+    .email button {
+        font-size: 20px;
+    }
+    #tv , #mobile {
+        flex-direction: column;
+    }
+    #tv > div , #mobile > div{
+        width: 80%;
+        margin: 4vh 0;
+        text-align: center;
+    }
+    #tv .tv-left h1 , #mobile .mobile-right {
+        order: -1;
+    }
+    #tv .tv-left h1 , #mobile .mobile-right h1 {
+        font-size: 40px;
+    }
+    #tv .tv-left h2 , #mobile .mobile-right h2 {
+        font-size: 20px;
+    }
+    .faq-section .faq-email h4 {
+        font-size: 20px;
+        font-weight: 400;
+    }
+    #footer-section .footer .footer-links a {
+        width: 48%;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .hero .navbar .nav-left svg{
+        height: 22px;
+    }
+    .email {
+        flex-direction: column;
+  }
+  .email input{
+    width: 85%;
+    margin-bottom: 25px;
+    }
+    #faq-section .faq h1 {
+        font-size: 30px;
+    }
+    #faq-section .faq .accordian {
+        font-size: 18px;
+    }
+    .faq-section .faq-email h4 {
+        font-size: 18px;
+        margin: 5px;
+    }
+    #footer-section {
+        padding: 20px;
+    }
+}
+@media only screen and (max-width: 400px){
+    .hero .navbar {
+        padding: 10px;
+    }
+    .nav-right ul select , .nav-right ul button {
+        margin: 0 2px;
+    }
+    .nav-right ul select , .nav-right ul button {
+        margin: 0 5px;
+        font-size: 12px;
+        font-weight: 400;
+        padding: 7px 10px;
+    }
+    .email button {
+        font-size: 17px;
+        /* font-weight: 400; */
+        /* padding: 10px 10px; */
+        height: 40px;
+    }
+}
+@media only screen and (max-height: 400px){
+    .hero {
+        100vh;
+    }
+}

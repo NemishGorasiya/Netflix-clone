@@ -1,0 +1,243 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #232323;
+}
+.hero {
+    height: 75vh;
+    background: linear-gradient(to bottom, rgba(0 , 0, 0, 1),rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)),
+              url('./Assets/bg1.jpg');
+}
+.hero .navbar {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
+    /* background: yellow; */
+    align-items: center;
+    height: 89px;
+}
+.hero .navbar .nav-left svg{
+    fill: #E50914;
+    height: 45px;
+}
+
+.nav-right ul{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 40px;
+}
+
+.nav-right ul select , .nav-right ul button {
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 5px;
+    padding: 7px 20px;
+    margin: 0 13px;
+}
+
+.nav-right ul select option , .footer-last select option{
+    color: black;
+}
+.nav-right ul select option:hover , .footer-last select option:hover{
+    background-color: blue;
+}
+.nav-right ul select , .lang-footer{
+    background-color: transparent;
+    border: 1px solid rgba(255 , 255, 255, 0.5);
+}
+
+
+.nav-right ul button {
+    background: #C11119;
+    padding: 9px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+
+.emailSection {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: white;
+      height: calc(100% - 89px);
+      width: 100%;
+}
+.emailSection > * {
+    padding: 12px 0;
+    text-align: center;
+}
+.emailSection h1 {
+    font-size: 50px;
+    font-weight: 900;
+}
+
+.emailSection h3 {
+    font-size: 27px;
+    font-weight: 400;
+}
+.emailSection h4 , .faq-section div h4{
+    font-size: 23px;
+    font-weight: 400;
+}
+.email {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+}
+.email input{
+    width: 420px;
+    height: 60px;
+    padding-left: 20px;
+    font-size: 17px;
+    background-color: rgba(10,10,10,0.7);
+    border: 1px solid rgba(255 , 255, 255, 0.5);
+    color: white;
+    border-radius: 5px;
+    margin: 0 10px;
+}
+.email input::placeholder {
+    color: #BBBCBC;
+}
+.email button {
+    border-radius: 5px;
+    background: #C11119;
+    height: 60px;
+    font-size: 25px;
+    color: white;
+    padding: 0 30px;
+    font-weight: bolder;
+    border: none;
+}
+
+#tv , #mobile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8px;
+    background: #000;
+    height: auto;
+    padding: 10vh 0;
+    width: 100%;
+}
+
+#tv > div , #mobile > div{
+    width: 30%;
+}
+
+#tv .tv-left , #mobile .mobile-right , .faq h1{
+    color: #fff;;
+}
+
+#tv .tv-left h1 , #mobile .mobile-right h1 , .faq h1{
+    font-size: 50px;
+    font-weight: 900;
+}
+#tv .tv-left h2 , #mobile .mobile-right h2{
+    font-weight: 400;
+    margin-top: 20px;
+}
+
+#tv .tv-right img , #mobile .mobile-left img{
+    width: 100%;
+    height: auto;
+}
+
+#faq-section {
+    margin-top: 8px;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0;
+}
+#faq-section .faq {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+#faq-section .faq h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#faq-section .faq .accordian .accordian-item , #faq-section .faq .accordian .hidden {
+    background: #2D2D2D;
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+}
+#faq-section .faq .accordian .accordian-item {
+    margin-top: 10px;
+}
+#faq-section .faq .accordian .accordian-item:hover {
+    background: #414141;
+    cursor: pointer;
+}
+#faq-section .faq .accordian {
+    font-size: 24px;
+    font-weight: 400;
+    color: white;
+}
+
+#faq-section .faq .accordian .hidden {
+    margin-top: 1px;
+    display: none;
+}
+
+.faq-section .faq-email h4 {
+    color: white;
+    font-size: 22px;
+    text-align: center;
+}
+.faq-section .faq-email {
+    margin-top: 20px;
+}
+.faq-section .faq-email > * {
+    margin: 20px 0;
+}
+
+#footer-section {
+    margin-top: 8px;
+    background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 70px;
+      width: 100%;
+}
+
+#footer-section .footer {
+    width: 70%;
+    color: #B3B3B3;
+}
+#footer-section .footer .footer-links {
+    width: 100%;
+}
+#footer-section .footer .footer-links a {
+    width: 24%;
+    margin: 8px 0;
+    display: inline-block;
+    color: #B3B3B3;
+    font-size: 14px;
+}
+
+.lang-footer {
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 5px;
+    padding: 7px 15px;
+    margin: 25px 0;
+    display: block;
+}
+
