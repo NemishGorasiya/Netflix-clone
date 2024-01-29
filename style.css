@@ -8,11 +8,10 @@ body {
     background: #232323;
 }
 .hero {
-    /* height: max(75vh,fit-content); */
-    /* height: auto; */
     height: 75vh;
     background: linear-gradient(to bottom, rgba(0 , 0, 0, 1),rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)),
               url('./Assets/bg1.jpg');
+              background-size: auto;
 }
 .navbar {
     width: 100%;
@@ -58,7 +57,7 @@ body {
 }
 
 
-.nav-right ul button {
+.nav-right ul button , .signIn form button{
     background: #C11119;
     padding: 9px 15px;
     border: none;
@@ -99,7 +98,7 @@ body {
       align-items: center;
       width: 100%;
 }
-.email input{
+.email input , .signIn form input{
     width: 420px;
     height: 60px;
     padding-left: 20px;
