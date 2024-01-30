@@ -48,13 +48,16 @@
       <div class="signIn">
         <div class="signIn-heading">Sign In</div>
         <form action="">
-            <input type="text" placeholder="Email or phone number">
-            <input type="text" placeholder="Password">
+            <input type="email" id="signin-email" placeholder="Email or phone number">
+            <p id="email-error"><i class="fa-regular fa-circle-xmark"></i> Please enter a valid email address or phone number.</p>
+            <span class="password-container"><input type="password" id="signin-password" placeholder="Password">
+              <i class="fa-regular fa-eye" id="eye-btn"></i></span>
+            <p id="password-error"><i class="fa-regular fa-circle-xmark"></i> Your password must contain between 4 and 60 characters.</p>
             <button>Sign In</button>
             <a href="">Forgot password?</a>
         </form>
         <div class="remember-me">
-            <input type="checkbox" name="remember" id=""> <span>Remember me</span>
+            <input type="checkbox" name="remember" id="remember-me-checkbox" checked> <span>Remember me</span>
         </div>
         <div class="new-to-netflix">
             <span>New to Netflix?</span><a href="">Sign up now.</a>
