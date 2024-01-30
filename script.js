@@ -42,17 +42,25 @@ let password_error = document.getElementById("password-error");
 signin_email.addEventListener("input",()=>{
     console.log(ValidateEmail(signin_email.value));
     if (!ValidateEmail(signin_email.value)) {
+        signin_email.style.outline = "2px solid red";
+        signin_email.style.border = "none";
         email_error.style.display = "block";
     }else {
         email_error.style.display = "none";
+        signin_email.style.border = "1px solid rgba(255 , 255, 255, 0.5)";
+        signin_email.style.outline = "none";
     }
 })
 signin_password.addEventListener("input",()=>{
     console.log(ValidatePassword(signin_password.value));
     if(!ValidatePassword(signin_password.value)){
+        signin_password.style.outline = "2px solid red";
+        signin_password.style.border = "none";
         password_error.style.display = "block";
     }else {
         password_error.style.display = "none";
+        signin_password.style.border = "1px solid rgba(255 , 255, 255, 0.5)";
+        signin_password.style.outline = "none";
     }
 })
 
@@ -75,7 +83,8 @@ signin_password.addEventListener("input",()=>{
 
 function ValidateEmail(input) {
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    if (input.match(emailRegex)) {
+    const mobileRegex = /^[0-9]{10}$/;
+    if (input.match(emailRegex) || input.match(mobileRegex)) {
       return true;
     } else {
       return false;

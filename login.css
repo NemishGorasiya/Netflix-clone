@@ -46,7 +46,6 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  /* background: yellow; */
   margin-bottom: 80px;
 }
 .signIn form p {
@@ -76,8 +75,8 @@
   color: #fff;
 }
 .signIn form .password-container {
-  /* background: yellow; */
   position: relative;
+  margin-bottom: 5px;
 }
 .signIn form .password-container > input{
   margin: 0;
@@ -103,15 +102,40 @@
   margin-bottom: 15px;
 }
 .remember-me input {
-  height: 20px;
-  width: 20px;
+  height: 17px;
+  width: 17px;
   margin-right: 8px;
-  accent-color: #fff;
+  appearance: none;
+  background: transparent;
+  font-size: 20px;
+  position: relative;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+  border: 1px solid grey;
+  outline: none;
 }
-.remember-me input:hover {
-  cursor: pointer;
+.remember-me:hover input:checked {
+  background: grey;
+  border: 1px solid grey;
 }
-
+.remember-me:hover input {
+  border: 1px solid #fff;
+}
+.remember-me input:checked {
+  background: #fff;
+  color: #000;
+  border: 1px solid white;
+}
+.remember-me input:checked:after {
+  content: "\2713";
+  font-size: 11px;
+  font-weight: 700;
+  display: block;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
 .new-to-netflix {
   margin-bottom: 15px;
 }
