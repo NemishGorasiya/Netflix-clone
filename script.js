@@ -38,7 +38,6 @@ let signin_email = document.getElementById("signin-email");
 let signin_password = document.getElementById("signin-password");
 let email_error = document.getElementById("email-error");
 let password_error = document.getElementById("password-error");
-
 signin_email.addEventListener("input",()=>{
     // console.log(ValidateEmail(signin_email.value));
     if (!ValidateEmail(signin_email.value)) {
@@ -64,6 +63,7 @@ signin_password.addEventListener("input",()=>{
     }
 })
 
+
 function ValidateEmail(input) {
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     const mobileRegex = /^[0-9]{10}$/;
@@ -74,7 +74,7 @@ function ValidateEmail(input) {
     }
 }
 function ValidatePassword(input) {
-    // Use a combo of uppercase letters, lowercase letters, numbers, and even some special characters (!, @, $, %, ^, &, *, +, #) in ALL passwords.
+  // Use a combo of uppercase letters, lowercase letters, numbers, and even some special characters (!, @, $, %, ^, &, *, +, #) in ALL passwords.
     let lower = false,upper = false,special=false,number=false;
     if (input.length < 8) {
         return false;
