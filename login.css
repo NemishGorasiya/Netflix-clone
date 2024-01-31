@@ -48,6 +48,9 @@
   flex-direction: column;
   margin-bottom: 80px;
 }
+.signIn form input {
+  padding: 0 45px 0 25px;
+}
 .signIn form p {
   color: red;
   margin: -5px 0;

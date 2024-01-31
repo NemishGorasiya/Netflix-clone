@@ -38,9 +38,8 @@ let signin_email = document.getElementById("signin-email");
 let signin_password = document.getElementById("signin-password");
 let email_error = document.getElementById("email-error");
 let password_error = document.getElementById("password-error");
-
 signin_email.addEventListener("input",()=>{
-    console.log(ValidateEmail(signin_email.value));
+    // console.log(ValidateEmail(signin_email.value));
     if (!ValidateEmail(signin_email.value)) {
         signin_email.style.outline = "2px solid red";
         signin_email.style.border = "none";
@@ -52,7 +51,7 @@ signin_email.addEventListener("input",()=>{
     }
 })
 signin_password.addEventListener("input",()=>{
-    console.log(ValidatePassword(signin_password.value));
+    // console.log(ValidatePassword(signin_password.value));
     if(!ValidatePassword(signin_password.value)){
         signin_password.style.outline = "2px solid red";
         signin_password.style.border = "none";
@@ -65,22 +64,6 @@ signin_password.addEventListener("input",()=>{
 })
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function ValidateEmail(input) {
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     const mobileRegex = /^[0-9]{10}$/;
@@ -91,9 +74,30 @@ function ValidateEmail(input) {
     }
 }
 function ValidatePassword(input) {
-    if(input.length>=4 && input.length<=60) {
-        return true;
-    }else{
+  // Use a combo of uppercase letters, lowercase letters, numbers, and even some special characters (!, @, $, %, ^, &, *, +, #) in ALL passwords.
+    let lower = false,upper = false,special=false,number=false;
+    if (input.length < 8) {
         return false;
-}
+    }
+    for(x of input){
+        // console.log(x);
+        if(x >= 'a' && x<='z'){
+            lower = true;
+        }else if(x >= 'A' && x<='Z'){
+            upper = true;
+        }else if(x >= 0 && x<=9){
+            number = true;
+        }else if(x === '!' || x === '@' || x === '$' || x === '%' || x === '^' || x === '&' || x === '*' || x === '+' || x === '#'){
+            special = true;
+        }
+        if(lower && upper && number && special){
+            return true;
+        }
+    }
+    return false;
+    // if(input.length>=4 && input.length<=60) {
+    //     return true;
+    // }else{
+    //     return false;
+    // }
 }
