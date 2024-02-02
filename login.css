@@ -31,7 +31,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 50px 65px 170px 65px;
+  padding: 50px 65px 130px 65px;
   border-radius: 5px;
 }
 .signIn .signIn-heading {
@@ -50,7 +50,23 @@
 }
 .signIn form input {
   padding: 0 45px 0 25px;
+  font-size: 17px !important;
+  -webkit-text-size-adjust: 17px !important
 }
+.signIn form input[data-autocompleted] {
+  background-color: transparent !important;
+}
+.signIn form input:-webkit-autofill,
+.signIn form input:-webkit-autofill:hover,
+.signIn form input:-webkit-autofill:focus,
+.signIn form input:-webkit-autofill:active {
+    -webkit-text-fill-color: #fff !important;
+    -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-size-adjust:none !important;
+    caret-color: #fff;
+}
+
 .signIn form p {
   color: red;
   margin: -5px 0;
@@ -76,6 +92,9 @@
   text-align: center;
   text-decoration: none;
   color: #fff;
+}
+.signIn form a:hover {
+  color: grey;
 }
 .signIn form .password-container {
   position: relative;
@@ -103,6 +122,8 @@
 .remember-me {
   color: #fff;
   margin-bottom: 15px;
+  display: flex;
+  align-items: center;
 }
 .remember-me input {
   height: 17px;
@@ -116,6 +137,7 @@
   border-radius: 2px;
   border: 1px solid grey;
   outline: none;
+  cursor: pointer;
 }
 .remember-me:hover input:checked {
   background: grey;
