@@ -23,6 +23,10 @@ let eye_btns = document.querySelectorAll(".eye-btn");
 let error_msgs = document.querySelectorAll(".error-message");
 let inputs = document.querySelectorAll("input[type=text] , input[type=password]");
 
+// let users = JSON.stringify([]);
+// localStorage.setItem("users",users);
+
+
 const moveToSignUp = (e) => {
     e.preventDefault();
     signup_email.value = "";
@@ -57,16 +61,23 @@ const signIn = (e) => {
     e.preventDefault();
     
     if (ValidateEmail(signin_email.value) && ValidatePassword(signin_password.value)) {
-        if (localStorage.getItem(signin_email.value) !== null) {
-            if (localStorage.getItem(signin_email.value) === signin_password.value) {
-                alert("Login Successful");
-                signin_email.value = "";
-                signin_password.value = "";
-            }else{
-                alert("Wrong password");
+        let users = JSON.parse(localStorage.getItem("users"));
+        let flag = false;
+        users.forEach((ele)=>{
+            if(ele.email === signin_email.value){
+                flag = true;
+                if (ele.password === signin_password.value) {
+                    alert("Login Successful");
+                    document.location.href="/";
+                    return;
+                }else{
+                    alert("wrong password");    
+                    return;
+                }
             }
-        }else{
-            alert("You are not existing user");
+        })
+        if(!flag){
+            alert("user does not exist");
         }
     }else {
         alert("somthing is wrong");
@@ -78,8 +89,32 @@ const signUp = (e) => {
     e.preventDefault();
 
     if (ValidateEmail(signup_email.value) && ValidatePassword(signup_password.value) && (signup_password.value === signup_confirmed_password.value)) {
-        alert("signUp");
-        localStorage.setItem(signup_email.value,signup_password.value);
+        // alert("signUp");
+        let users;
+        if (localStorage.getItem("users") !== null) {
+            users = JSON.parse(localStorage.getItem("users"));
+            let flag = false;
+            users.forEach((ele)=>{
+                if(ele.email === signup_email.value){
+                    flag = true;
+                }
+            })
+            if(flag) {
+               alert("user already exists with same email.");
+               return;
+            }
+        // localStorage.setItem(signup_email.value,signup_password.value);
+    } else {
+        users = [];
+    }
+    let x = {
+        email : signup_email.value,
+        password : signup_password.value
+    }
+    users.push(x);
+    localStorage.setItem("users",JSON.stringify(users));
+        alert("sign up");
+        console.log(users); 
         signup_email.value = "";
         signup_password.value = "";
         signup_confirmed_password.value = "";
