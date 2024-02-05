@@ -23,10 +23,23 @@ let eye_btns = document.querySelectorAll(".eye-btn");
 let error_msgs = document.querySelectorAll(".error-message");
 let inputs = document.querySelectorAll("input[type=text] , input[type=password]");
 
-// let users = JSON.stringify([]);
-// localStorage.setItem("users",users);
+let signin_btn_home = document.getElementById("signin-btn-home");
+let log_out_btn = document.getElementById("log-out-btn");
 
-
+document.addEventListener("DOMContentLoaded",()=>{
+    if (localStorage.getItem("LoggedIn") === "true") {
+       console.log("called");
+       signin_btn_home.style.display = "none";
+       log_out_btn.style.display = "flex";
+    }
+})
+if(log_out_btn != null){
+    log_out_btn.addEventListener("click",()=>{
+        localStorage.setItem("LoggedIn","false");
+        signin_btn_home.style.display = "flex";
+        log_out_btn.style.display = "none";
+    })
+}
 const moveToSignUp = (e) => {
     e.preventDefault();
     signup_email.value = "";
@@ -62,12 +75,19 @@ const signIn = (e) => {
     
     if (ValidateEmail(signin_email.value) && ValidatePassword(signin_password.value)) {
         let users = JSON.parse(localStorage.getItem("users"));
+        if (users === null) {
+            alert("user does not exist");
+            return;
+        }
         let flag = false;
         users.forEach((ele)=>{
             if(ele.email === signin_email.value){
                 flag = true;
                 if (ele.password === signin_password.value) {
                     alert("Login Successful");
+                    signin_password.value = "";
+                    signin_email.value = "";
+                    localStorage.setItem("LoggedIn","true");
                     document.location.href="/";
                     return;
                 }else{
@@ -196,8 +216,12 @@ const confirm_password = () => {
     }
 }
 
-signup_password.addEventListener("input",confirm_password);
-signup_confirmed_password.addEventListener("input",confirm_password);
+if(signup_password != null){
+    signup_password.addEventListener("input",confirm_password);
+}
+if(signup_confirmed_password != null){
+    signup_confirmed_password.addEventListener("input",confirm_password);
+}
 
 
 function ValidateEmail(input) {
