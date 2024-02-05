@@ -86,24 +86,23 @@
         padding: 20px;
     }
 }
-.signIn {
+@media only screen and (max-width: 400px){
     .navbar {
         padding: 10px;
-    }
-    .nav-right ul select , .nav-right ul button {
-        margin: 0 2px;
     }
     .nav-right ul select , .nav-right ul button {
         margin: 0 5px;
         font-size: 12px;
         font-weight: 400;
         padding: 7px 10px;
+        height: 30px;
     }
     .email button {
         font-size: 17px;
         height: 40px;
     }
 }
+
 @media only screen and (max-height: 645px){
     .hero {
         height: auto;

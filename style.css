@@ -234,6 +234,10 @@ body {
     display: inline-block;
     color: #B3B3B3;
     font-size: 14px;
+    transition: color 0.3s ease;
+}
+#footer-section .footer .footer-links a:hover {
+    color: #fff;
 }
 
 .lang-footer {
